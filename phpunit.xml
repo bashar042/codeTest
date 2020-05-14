@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="phpunit.xsd"
+         bootstrap="./vendor/autoload.php"
+         colors="true"
+         verbose="true">
+    <testsuites>
+        <testsuite name="unit">
+            <directory>./vendor/phpunit/phpunit/tests/unit</directory>
+        </testsuite>
+
+        <testsuite name="end-to-end">
+            <directory suffix=".phpt">./vendor/phpunit/phpunit/tests/</directory>
+            <exclude>./vendor/phpunit/phpunit/tests/end-to-end/_files</exclude>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./vendor/phpunit/phpunit/src/</directory>
+            <exclude>
+                <file>./vendor/phpunit/phpunit/src/Framework/Assert/Functions.php</file>
+                <file>./vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <php>
+        <const name="PHPUNIT_TESTSUITE" value="true"/>
+    </php>
+</phpunit>

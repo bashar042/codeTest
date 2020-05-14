@@ -1,0 +1,9 @@
+{
+  "autoload": {
+    "classmap": ["./"],
+    "files": ["helper/functions.php"]
+  },
+  "require": {
+    "phpunit/phpunit": "^9.1"
+  }
+}

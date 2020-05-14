@@ -1,0 +1,5 @@
+Commands For:
+1. Output view: php app.php input.txt
+2. UnitTest: 
+  First enter into 'vendor/bin' directory then run
+  phpunit ../../test/PagesTest.php
